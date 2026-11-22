@@ -221,3 +221,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Materiale da stampare (QR, fogli A4): resta solo sul computer, non va online
+materiale-stampa/
+
+# File di sistema macOS
+.DS_Store
