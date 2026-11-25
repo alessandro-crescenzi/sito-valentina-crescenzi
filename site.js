@@ -129,4 +129,27 @@ function costruisciDati(S, O, prenotaUrl) {
   });
 
   $("dati-strutturati").textContent = d.jsonLd;
+
+  /* Barra «Prenota / Chiama» su schermi stretti. Il link di prenotazione è letto dal pulsante
+     #prenota (mai riscritto qui); il telefono viene da STUDIO. */
+  var barra = document.createElement("nav");
+  barra.className = "barra-mobile";
+  barra.setAttribute("aria-label", "Azioni rapide");
+
+  var prenota = document.createElement("a");
+  prenota.className = "azione-prenota";
+  prenota.href = $("prenota").getAttribute("href");
+  prenota.rel = "noopener";
+  prenota.textContent = "Prenota";
+
+  var chiama = document.createElement("a");
+  chiama.className = "azione-chiama";
+  chiama.href = d.telHref;
+  chiama.setAttribute("aria-label", "Chiama lo studio al " + STUDIO.telefono);
+  chiama.textContent = "Chiama";
+
+  barra.appendChild(prenota);
+  barra.appendChild(chiama);
+  document.body.appendChild(barra);
+  document.documentElement.className += " con-barra";
 })();
