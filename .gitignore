@@ -225,5 +225,10 @@ __marimo__/
 # Materiale da stampare (QR, fogli A4): resta solo sul computer, non va online
 materiale-stampa/
 
+# File di Claude Code (istruzioni, agenti, skill, permessi locali): restano solo sul computer
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+
 # File di sistema macOS
 .DS_Store

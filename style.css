@@ -7,12 +7,16 @@
   --primary-dark: #08524e;
   --warn-bg: #fff4e0;
   --warn-border: #e0a530;
+  --focus: #08524e;
   --radius: 10px;
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   margin: 0;
@@ -85,9 +89,10 @@ h1 {
   margin: 0 0 12px;
   font-size: clamp(2rem, 6vw, 3rem);
   line-height: 1.15;
+  text-wrap: balance;
 }
-h2 { margin: 0 0 12px; font-size: 1.5rem; }
-.lead { font-size: 1.2rem; max-width: 36rem; }
+h2 { margin: 0 0 12px; font-size: 1.5rem; text-wrap: balance; }
+.lead { font-size: 1.2rem; max-width: 36rem; text-wrap: pretty; }
 
 .btn {
   display: inline-block;
@@ -100,9 +105,10 @@ h2 { margin: 0 0 12px; font-size: 1.5rem; }
 }
 .btn:hover { background: var(--primary-dark); color: #fff; }
 .btn:focus-visible, a:focus-visible {
-  outline: 3px solid #f5b400;
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
+.site-footer a:focus-visible { outline-color: #ffd54a; }
 
 .note { color: var(--muted); font-size: .95rem; max-width: 36rem; }
 
@@ -126,7 +132,18 @@ h2 { margin: 0 0 12px; font-size: 1.5rem; }
 .steps { padding-left: 22px; }
 
 .hours { border-collapse: collapse; width: 100%; max-width: 360px; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
 .hours th, .hours td {
+  font-variant-numeric: tabular-nums;
   text-align: left;
   padding: 6px 0;
   border-bottom: 1px solid #cfdddb;

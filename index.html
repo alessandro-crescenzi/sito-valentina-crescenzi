@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
   <title>Dott.ssa Valentina Crescenzi – Medico Chirurgo a Castel di Lama</title>
   <meta name="description" content="Dott.ssa Valentina Crescenzi, medico chirurgo e medico sostituto a Castel di Lama (AP). Orari, contatti e prenotazione online delle visite.">
   <link rel="canonical" href="https://drcrescenzi.it/">
@@ -17,21 +18,37 @@
   <meta property="og:title" content="Dott.ssa Valentina Crescenzi – Medico Chirurgo">
   <meta property="og:description" content="Medico chirurgo e medico sostituto a Castel di Lama (AP). Prenota una visita online.">
   <meta property="og:url" content="https://drcrescenzi.it/">
+  <meta property="og:site_name" content="Dott.ssa Valentina Crescenzi">
+  <meta property="og:image" content="https://drcrescenzi.it/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dott.ssa Valentina Crescenzi, medico chirurgo a Castel di Lama (AP)">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!--
   ╔══════════════════════════════════════════════════════════════════╗
   ║  DATI MODIFICABILI: studio, contatti e orari                     ║
-  ║  Cambia solo i valori tra virgolette. Il sito si aggiorna da sé: ║
-  ║  indirizzo, mappa, telefono, email, tabella orari e dati per     ║
-  ║  Google (schema.org).                                            ║
+  ║  Cambia solo i valori tra virgolette, poi lancia da terminale,   ║
+  ║  dalla cartella del sito:                                        ║
+  ║                                                                  ║
+  ║      node .strumenti/genera-statico.mjs                          ║
+  ║                                                                  ║
+  ║  Lo script riscrive nell'HTML indirizzo, mappa, telefono, email, ║
+  ║  tabella orari e dati per Google (schema.org), così restano      ║
+  ║  visibili anche a chi non esegue JavaScript. Per controllare     ║
+  ║  senza modificare: node .strumenti/genera-statico.mjs --check    ║
   ║                                                                  ║
   ║  ORARI: ogni giorno ha una lista di fasce [apertura, chiusura].  ║
   ║    - una fascia:    fasce: [["09:00", "12:00"]]                  ║
   ║    - due fasce:     fasce: [["09:00", "12:00"], ["15:00", "19:00"]] ║
   ║    - giorno chiuso: fasce: []                                    ║
   ║                                                                  ║
-  ║  Se cambi la città, aggiorna a mano anche <title> e le           ║
-  ║  <meta description> qui sopra, che sono scritti nel testo.       ║
+  ║  Se cambi il link di prenotazione (3 punti nella pagina),        ║
+  ║  rilancia lo script: aggiorna anche i dati per Google.           ║
+  ║                                                                  ║
+  ║  Se cambi la città, aggiorna a mano anche <title>, le            ║
+  ║  <meta description>, i meta og:* qui sopra e og-image.png        ║
+  ║  (sorgente: .strumenti/og-image.html).                           ║
   ╚══════════════════════════════════════════════════════════════════╝
   -->
   <script>
@@ -54,13 +71,14 @@
       { giorno: "Domenica",  en: "Sunday",    fasce: [] }
     ];
   </script>
+  <script type="application/ld+json" id="dati-strutturati">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://drcrescenzi.it/#sito","url":"https://drcrescenzi.it/","name":"Dott.ssa Valentina Crescenzi","inLanguage":"it-IT","publisher":{"@id":"https://drcrescenzi.it/#studio"}},{"@type":"Physician","@id":"https://drcrescenzi.it/#studio","name":"Dott.ssa Valentina Crescenzi","url":"https://drcrescenzi.it/","description":"Medico chirurgo e medico sostituto a Castel di Lama.","telephone":"+39 328 2440749","email":"dr.crescenzi@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Via Cesare Beccaria 3","addressLocality":"Castel di Lama","addressRegion":"AP","postalCode":"63082","addressCountry":"IT"},"areaServed":{"@type":"City","name":"Castel di Lama"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Via%20Cesare%20Beccaria%203%2C%2063082%20Castel%20di%20Lama%20(AP)","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"15:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"15:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"12:00"}],"potentialAction":{"@type":"ReserveAction","name":"Prenota una visita","target":{"@type":"EntryPoint","urlTemplate":"https://calendar.app.google/C95pxmsngUZskD6g8","inLanguage":"it-IT","actionPlatform":["https://schema.org/DesktopWebPlatform","https://schema.org/MobileWebPlatform"]}}}]}</script>
 </head>
 <body>
   <a class="skip" href="#contenuto">Vai al contenuto</a>
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html">Dott.ssa Valentina Crescenzi</a>
+      <a class="brand" href="/">Dott.ssa Valentina Crescenzi</a>
       <nav aria-label="Principale">
         <a href="#orari">Orari e contatti</a>
         <a href="https://calendar.app.google/C95pxmsngUZskD6g8" class="nav-cta" rel="noopener">Prenota</a>
@@ -73,7 +91,7 @@
       <div class="wrap">
         <p class="eyebrow">Medico Chirurgo · Medico sostituto · <span data-studio="citta">Castel di Lama</span></p>
         <h1>Dott.ssa Valentina Crescenzi</h1>
-        <p class="lead">Un medico di fiducia per te e per la tua famiglia. Prenota online la tua visita in studio in pochi click.</p>
+        <p class="lead">Medico chirurgo a <span data-studio="citta">Castel di Lama</span>. Prenota online la tua visita in studio.</p>
         <p>
           <a class="btn" id="prenota" href="https://calendar.app.google/C95pxmsngUZskD6g8" rel="noopener">Prenota una visita</a>
         </p>
@@ -104,23 +122,29 @@
         <div>
           <h2>Orari dello studio</h2>
           <table class="hours">
+            <caption class="sr-only">Orari di apertura dello studio</caption>
             <thead>
               <tr><th scope="col">Giorno</th><th scope="col">Orario</th></tr>
             </thead>
-            <tbody id="tabella-orari"></tbody>
+            <tbody id="tabella-orari">
+              <tr><th scope="row">Lunedì</th><td>15:00 – 19:00</td></tr>
+              <tr><th scope="row">Martedì</th><td>09:00 – 12:00</td></tr>
+              <tr><th scope="row">Mercoledì</th><td>15:00 – 19:00</td></tr>
+              <tr><th scope="row">Giovedì</th><td>09:00 – 12:00</td></tr>
+              <tr><th scope="row">Venerdì</th><td>09:00 – 12:00</td></tr>
+              <tr><th scope="row">Sabato</th><td>Chiuso</td></tr>
+              <tr><th scope="row">Domenica</th><td>Chiuso</td></tr>
+            </tbody>
           </table>
         </div>
         <div>
           <h2>Dove e come contattarmi</h2>
-          <address id="indirizzo"></address>
-          <p><a id="mappa" href="#" rel="noopener">Apri in Google Maps</a></p>
-          <p>Telefono: <a id="telefono" href="#">Chiama lo studio</a><br>
-          Email: <a id="email" href="#">Scrivi una email</a></p>
+          <address id="indirizzo">Via Cesare Beccaria 3<br>63082 Castel di Lama (AP)</address>
+          <p><a id="mappa" href="https://www.google.com/maps/search/?api=1&amp;query=Via%20Cesare%20Beccaria%203%2C%2063082%20Castel%20di%20Lama%20(AP)" rel="noopener">Apri in Google Maps</a></p>
+          <p>Telefono: <a id="telefono" href="tel:+393282440749">328 2440749</a><br>
+          Email: <a id="email" href="mailto:dr.crescenzi@gmail.com">dr.crescenzi@gmail.com</a></p>
         </div>
       </div>
-      <noscript>
-        <div class="wrap"><p>Per vedere orari e indirizzo dello studio è necessario abilitare JavaScript.</p></div>
-      </noscript>
     </section>
 
     <section class="block" id="come-prenotare">
@@ -144,84 +168,6 @@
     </div>
   </footer>
 
-  <script>
-    /* Costruisce indirizzo, orari, contatti e dati strutturati a partire da STUDIO e ORARI. */
-    (function () {
-      var $ = function (id) { return document.getElementById(id); };
-
-      var cittaProv = STUDIO.cap + " " + STUDIO.citta + " (" + STUDIO.provincia + ")";
-      var telPulito = STUDIO.telefono.replace(/\s+/g, "");
-      if (telPulito.charAt(0) !== "+") { telPulito = "+39" + telPulito; }
-
-      Array.prototype.forEach.call(document.querySelectorAll("[data-studio]"), function (el) {
-        el.textContent = STUDIO[el.dataset.studio];
-      });
-
-      var ind = $("indirizzo");
-      ind.appendChild(document.createTextNode(STUDIO.via));
-      ind.appendChild(document.createElement("br"));
-      ind.appendChild(document.createTextNode(cittaProv));
-
-      $("mappa").href = "https://www.google.com/maps/search/?api=1&query=" +
-        encodeURIComponent(STUDIO.via + ", " + cittaProv);
-
-      var tel = $("telefono");
-      tel.href = "tel:" + telPulito;
-      tel.textContent = STUDIO.telefono;
-
-      var mail = $("email");
-      mail.href = "mailto:" + STUDIO.email;
-      mail.textContent = STUDIO.email;
-
-      var tbody = $("tabella-orari");
-      ORARI.forEach(function (g) {
-        var tr = document.createElement("tr");
-        var th = document.createElement("th");
-        th.scope = "row";
-        th.textContent = g.giorno;
-        var td = document.createElement("td");
-        td.textContent = g.fasce.length
-          ? g.fasce.map(function (f) { return f[0] + " – " + f[1]; }).join(" / ")
-          : "Chiuso";
-        tr.appendChild(th);
-        tr.appendChild(td);
-        tbody.appendChild(tr);
-      });
-
-      var specifiche = [];
-      ORARI.forEach(function (g) {
-        g.fasce.forEach(function (f) {
-          specifiche.push({
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: g.en,
-            opens: f[0],
-            closes: f[1]
-          });
-        });
-      });
-
-      var ld = document.createElement("script");
-      ld.type = "application/ld+json";
-      ld.textContent = JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": ["Physician", "MedicalBusiness"],
-        name: "Dott.ssa Valentina Crescenzi",
-        url: "https://drcrescenzi.it/",
-        description: "Medico chirurgo e medico sostituto a " + STUDIO.citta + ".",
-        telephone: "+39 " + STUDIO.telefono.replace(/^\+39\s*/, ""),
-        email: STUDIO.email,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: STUDIO.via,
-          addressLocality: STUDIO.citta,
-          addressRegion: STUDIO.provincia,
-          postalCode: STUDIO.cap,
-          addressCountry: "IT"
-        },
-        openingHoursSpecification: specifiche
-      });
-      document.head.appendChild(ld);
-    })();
-  </script>
+  <script src="site.js"></script>
 </body>
 </html>
