@@ -230,5 +230,9 @@ materiale-stampa/
 CLAUDE.md
 CLAUDE.local.md
 
+# Skill installate (SEOmator e relativo lock): strumenti locali, non fanno parte del sito
+.agents/
+skills-lock.json
+
 # File di sistema macOS
 .DS_Store
